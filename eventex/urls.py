@@ -15,6 +15,7 @@ from django.conf.urls import patterns, include, url
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 #)
-urlpatterns = patterns('eventex.core.views',
-	url(r'^$', 'homepage', name='homepage'),
+urlpatterns = patterns('',
+	url(r'^$', 'eventex.core.views.homepage', name='homepage'),
+	url(r'^inscricao/$', 'eventex.subscriptions.views.subscribe', name='subscribe'),
 )
