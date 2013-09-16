@@ -1,11 +1,11 @@
 {% extends 'base.html'%}
 
 {% block content %}
-{% csrf_token %}
+
 
 <br>
 <form action="." method="PoST">
-
+{% csrf_token %}
 	<p>
 		<label for="{{ form.name.id_for_label}}"> {{ form.name.label }}:</label>
 		{{ form.name }}
