@@ -19,4 +19,5 @@ urlpatterns = patterns('',
 	url(r'^$', 'eventex.core.views.homepage', name='homepage'),
 	url(r'^inscricao/$', 'eventex.subscriptions.views.subscribe', name='subscribe'),
 	url(r'^inscricao/(\d+)/$', 'eventex.subscriptions.views.detail', name='detail'),
+    url(r'^inscritos/$', 'eventex.subscriptions.views.entries', name='entries'),
 )

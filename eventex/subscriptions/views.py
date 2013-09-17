@@ -1,5 +1,6 @@
 # coding: utf-8
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render
 from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
@@ -30,3 +31,9 @@ def detail(request, pk):
 	subscription = get_object_or_404(Subscription, pk=pk)
 	return render(request, 'subscriptions/subscription_detail.html',
 				  {'subscription': subscription})
+
+
+def entries(request):
+	entries = Subscription.objects.all()
+	return render(request, 'subscriptions/subscription_entries.html',
+				   {'entries': entries})
