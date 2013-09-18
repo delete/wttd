@@ -18,7 +18,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': dj_database_url.config(
-            default='postgresql_psycopg2:///' + PROJECT_DIR.child('database.db'))
+            default='sqlite:///' + PROJECT_DIR.child('database.db'))
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
     #     'NAME': PROJECT_DIR.child('database.db'),                      # Or path to database file if using sqlite3.

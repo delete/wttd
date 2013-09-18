@@ -6,9 +6,11 @@
 	<p>O pessoal que já está participando, não perca tempo! </p>
 </center>
 
-{% for person in entries%}
+{{entries}}
+
+<!-- {% for person in entries%}
 	{{ person.name }}, inscrito em {{ person.created_at|date:"d/m/Y" }}.
 	<br>
-{%endfor%}
+{%endfor%} -->
 
 {% endblock %}
