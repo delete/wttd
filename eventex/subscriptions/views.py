@@ -33,38 +33,7 @@ def detail(request, pk):
 				  {'subscription': subscription})
 
 
-import urllib2
-import re
-from bs4 import BeautifulSoup
-
-
 def entries(request):
-	#entries = Subscription.objects.all()
-	req = urllib2.Request('http://websro.correios.com.br/sro_bin/txect01$.Inexistente?P_LINGUA=001&P_TIPO=002&P_COD_LIS=PG416270837BR')
-	page = urllib2.urlopen(req)
-
-	lista = []
-	dicionario = {}
-	item = []
-	itens = []     
-	linha = 0
-
-	for line in page:
-		if 'rowspan' in line:                
-			lista.append(line)                                            
-
-    #os.remove('/tmp/t.txt')
-	for linha in lista:
-		soup = BeautifulSoup(linha)
-		tag = soup.tr
-		data = tag.contents[0].contents[0]      
-		local = tag.contents[1].contents[0]
-		situacao = tag.contents[2].contents[0].contents[0]
-		#Cria uma lista de dicionarios
-		item = {'data': data, 'local': local, 'situacao': situacao}
-		itens.append(item)
-
-	dicionario = {'dados': itens}
-	
+	entries = Subscription.objects.all()
 	return render(request, 'subscriptions/subscription_entries.html',
-				   {'entries': dicionario})
+				   {'entries': entries})
