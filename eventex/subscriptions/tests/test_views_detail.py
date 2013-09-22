@@ -3,12 +3,14 @@
 from django.test import TestCase
 
 from eventex.subscriptions.models import Subscription
+from django.core.urlresolvers import reverse as r
+
 
 class DatailTest(TestCase):
 	def setUp(self):
 		s = Subscription.objects.create(name='Fellipe Pinheiro', cpf='000000000012',
 							 email='pinheiro.llip@gmail.com', phone='21-00000000')
-		self.response = self.client.get('/inscricao/%d/' % s.pk)
+		self.response = self.client.get(r('subscriptions:detail', args=[s.pk]))
 
 	def test_get(self):
 		'GET /inscricao/1/ should return status 200'
@@ -30,5 +32,5 @@ class DatailTest(TestCase):
 
 class DatilNotFoundTest(TestCase):
 	def test_not_found(self):
-		response = self.client.get('/inscricao/0/')
+		response = self.client.get(r('subscriptions:detail', args=[0]))
 		self.assertEqual(404, response.status_code)

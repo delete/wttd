@@ -27,8 +27,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <!-- <li><a href="/">About</a></li> -->
-            <li><a href="/inscricao/">Inscrição</a></li>
-            <li><a href="/inscritos/">Galera participando</a></li>
+            <li><a href="{% url 'subscriptions:subscribe' %}">Inscrição</a></li>
+            <li><a href="{% url 'subscriptions:entries' %}">Galera participando</a></li>
         </div><!--/.nav-collapse -->
       </div>
     </div>

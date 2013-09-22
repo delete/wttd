@@ -2,7 +2,7 @@ from django.test import TestCase
 
 class EntriesTest(TestCase):
 	def setUp(self):
-		self.response = self.client.get('/inscritos/')
+		self.response = self.client.get('/inscricao/inscritos/')
 
 	def test_get(self):
 		'Get /inscritos/ must return staus code 200'

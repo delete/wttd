@@ -11,3 +11,4 @@ class SubscriptionForm(forms.ModelForm):
 	# phone = forms.CharField(label=_('Telefone'))
 	class Meta:
 		model = Subscription
+		exclude= ('paid',)
