@@ -5,7 +5,8 @@
 
 <br>
 <form action="." method="PoST">
-{% csrf_token %}
+	{% csrf_token %}
+	{{ form.non_field_errors }}
   
 	<p>
 		<label for="{{ form.name.id_for_label}}"> {{ form.name.label }}:</label>
@@ -29,10 +30,10 @@
 	</p>
 
 	<p>
-		<label for="{{ form.phone.id_for_label}}"> {{ form.phone.label }}:</label>
+		<label for="id_phone_0"> Phone:</label>
 		<br>
-		{{ form.phone }}
-		{{ form.phone.errors }}
+		<input type="text" name="phone_0" value="" id="id_phone_0"
+		<input type="text" name="phone_1" value="" id="id_phone_1">
 	</p>
 	<input type="submit" value="Enviar!" class="btn">
 
