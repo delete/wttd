@@ -8,9 +8,9 @@ from django.core.validators import EMPTY_VALUES
 
 def CPFValidator(value):
 	if not value.isdigit():
-		raise ValidationError(_(u'CPF deve conter apenas números'))
+		raise ValidationError(_(u'CPF deve conter apenas números.'))
 	if len(value) != 11:
-		raise ValidationError(_(u'CPF deve ter 11 números'))
+		raise ValidationError(_(u'CPF deve ter 11 números.'))
 
 class PhoneWidget(forms.MultiWidget):
 	def __init__(self, attrs=None):
@@ -76,6 +76,6 @@ class SubscriptionForm(forms.ModelForm):
 
 		if not self.cleaned_data.get('email') and \
 		   not self.cleaned_data.get('phone'):
-		   raise ValidationError(_(u'Informe seu e-email ou telefone'))
+		   raise ValidationError(_(u'Informe seu e-email ou telefone.'))
 
 		return self.cleaned_data
