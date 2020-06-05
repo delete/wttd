@@ -1,4 +1,4 @@
-django==1.11.28
+django==1.11.29
 dj-database-url==0.2.1
 Unipath==1.0
 gunicorn==19.5.0
